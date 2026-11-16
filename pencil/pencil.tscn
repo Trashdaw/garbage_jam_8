@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bbxioue7s3uqf"]
+
+[ext_resource type="Script" uid="uid://dgewe787xqsxb" path="res://pencil/pencil.gd" id="1_scyov"]
+
+[sub_resource type="Curve2D" id="Curve2D_grgbg"]
+
+[node name="Pencil" type="Node2D" unique_id=1304973671]
+script = ExtResource("1_scyov")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=843629124]
+curve = SubResource("Curve2D_grgbg")
+
+[node name="Label" type="Label" parent="." unique_id=1093834439]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "pencil_left: "

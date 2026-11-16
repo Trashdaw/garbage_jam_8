@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d4e31oajr3cuh"]
+
+[ext_resource type="Texture2D" uid="uid://bu1gygiw87l6t" path="res://sprites/brush_0.png" id="1_rjlwk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oybhc"]
+radius = 8.0
+
+[node name="StrokeBasic" type="Node2D" unique_id=1511552303]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=437811133]
+texture_filter = 1
+texture = ExtResource("1_rjlwk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=497961882]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1219163963]
+shape = SubResource("CircleShape2D_oybhc")
