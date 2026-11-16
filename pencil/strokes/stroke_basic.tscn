@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bu1gygiw87l6t" path="res://sprites/brush_0.png" id="1_rjlwk"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_oybhc"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1w4dl"]
 radius = 8.0
 
 [node name="StrokeBasic" type="Node2D" unique_id=1511552303]
@@ -14,4 +14,4 @@ texture = ExtResource("1_rjlwk")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=497961882]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1219163963]
-shape = SubResource("CircleShape2D_oybhc")
+shape = SubResource("CircleShape2D_1w4dl")
