@@ -1,0 +1,87 @@
+[gd_scene format=4 uid="uid://c3eqnpvo164bs"]
+
+[ext_resource type="Script" uid="uid://cn47puvds3h6o" path="res://levels/level_base.gd" id="1_levkr"]
+[ext_resource type="Texture2D" uid="uid://cdbotsaqg5s2b" path="res://sprites/tilemap/background.png" id="2_tx31t"]
+[ext_resource type="Texture2D" uid="uid://brdjs3b5tdy8" path="res://sprites/tilemap/tilemap_0.png" id="3_i1u7t"]
+[ext_resource type="PackedScene" uid="uid://5lyok6fan2ka" path="res://objects/player/player.tscn" id="4_uimjd"]
+[ext_resource type="PackedScene" uid="uid://dni4156go7lwb" path="res://objects/objective/objective.tscn" id="5_j0olh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnvg6"]
+texture = ExtResource("3_i1u7t")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -3.8235703, -5.098091)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, -16, -16, -16, -16, 16)
+1:0/0/physics_layer_0/polygon_0/one_way = true
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.372616, -7.0098763, -16, -16, -16, 16, 16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(12.107967, -16, 16, -16, 16, 16, -16, 16, -16, 11.742844, 12.230394, 11.690819)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -11.789339, -16, -11.510959, 12.949829, 16, 12.76997, 16, 16, -16, 16, -16, -16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, 11.470707, 16, 11.789337, -10.833445, -16, -11.789337, -16, -16)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -12.74523, -11.470707, -12.4265995, -11.789339, 16, -16, 16, -16, -16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_btoec"]
+texture = ExtResource("3_i1u7t")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p3adb"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_cnvg6")
+sources/1 = SubResource("TileSetAtlasSource_btoec")
+
+[node name="LevelBase" type="Node2D" unique_id=1754352208]
+script = ExtResource("1_levkr")
+next_level = "res://levels/level_2.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1656248071]
+texture_filter = 1
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_tx31t")
+metadata/_edit_use_anchors_ = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=363279184]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAADAAUAAAABAAAAAAANAAUAAAABAAAAAAAOAAUAAQADAAEAAAAEAAUAAAABAAAAAAAFAAUAAQABAAAAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAAIAAUAAQABAAAAAAACAAQAAQAEAAAAAAACAAMAAQAAAAEAAAAGAAUAAQABAAAAAAAHAAUAAQABAAAAAAACAAIAAQAAAAEAAAACAAEAAQAAAAEAAAACAAAAAQAAAAEAAAAOAAYAAQACAAEAAAAOAAcAAQACAAEAAAAPAAcAAQAEAAAAAAAQAAgAAQABAAAAAAARAAgAAQABAAAAAAASAAgAAQABAAAAAAATAAgAAQABAAAAAAA=")
+tile_set = SubResource("TileSet_p3adb")
+
+[node name="Player" parent="." unique_id=775762126 instance=ExtResource("4_uimjd")]
+position = Vector2(120, 132)
+floor_max_angle = 1.0471976
+max_speed = 50.0
+acceleration = 100.0
+friction = 50.0
+
+[node name="Objective" parent="." unique_id=1521158862 instance=ExtResource("5_j0olh")]
+position = Vector2(647, 222)

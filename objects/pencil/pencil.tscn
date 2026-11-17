@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bbxioue7s3uqf"]
+
+[ext_resource type="Script" uid="uid://dgewe787xqsxb" path="res://objects/pencil/pencil.gd" id="1_scyov"]
+[ext_resource type="Texture2D" uid="uid://c5gbj18tnvfft" path="res://sprites/gauge_over.png" id="2_a23t2"]
+[ext_resource type="Texture2D" uid="uid://b8bbpkqoq6l56" path="res://sprites/gauge_progress.png" id="3_lngys"]
+
+[sub_resource type="Curve2D" id="Curve2D_grgbg"]
+
+[node name="Pencil" type="Node2D" unique_id=1304973671]
+script = ExtResource("1_scyov")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1226727279]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=843629124]
+curve = SubResource("Curve2D_grgbg")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=549591715]
+texture_filter = 1
+offset_left = 14.0
+offset_right = 54.0
+offset_bottom = 360.0
+max_value = 10.0
+step = 0.1
+fill_mode = 3
+texture_over = ExtResource("2_a23t2")
+texture_progress = ExtResource("3_lngys")

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://5lyok6fan2ka"]
+
+[ext_resource type="Texture2D" uid="uid://ciqtmbsu3jd80" path="res://sprites/brush_1.png" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://4wjja6kffw6" path="res://objects/player/player.gd" id="1_rkbax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72yv8"]
+size = Vector2(30, 29)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oybhc"]
+radius = 20.0
+
+[node name="Player" type="CharacterBody2D" unique_id=775762126]
+collision_mask = 13
+script = ExtResource("1_rkbax")
+max_speed = 20.0
+acceleration = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=783549029]
+texture_filter = 1
+texture = ExtResource("1_oul6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1854455646]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_72yv8")
+one_way_collision = true
+
+[node name="Label" type="Label" parent="." unique_id=763648365]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "velocity"
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1049068252]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=489878296]
+shape = SubResource("CircleShape2D_oybhc")
+debug_color = Color(0, 0.6270559, 0.49710685, 0.36862746)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
