@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://rsinqqdhhi6c"]
+
+[ext_resource type="Script" uid="uid://b5j6kltu6lmwk" path="res://stroke_detector.gd" id="1_hnd3l"]
+
+[node name="StrokeDetector" type="Area2D" unique_id=1018947312]
+script = ExtResource("1_hnd3l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

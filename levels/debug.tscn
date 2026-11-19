@@ -17,16 +17,22 @@ texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.372616, -7.0098763, -16, -16, -16, 16, 16, 16)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 13.129688, -16, 16, 16, 16, 16, 12.590111)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(12.426598, -10.196184, 12.107967, -16, 12.426598, 12.426601, -16, 12.426601, -16, 16, 16, 16, 16, -16, 12.107967, -16, 12.107967, -16)
 5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, 11.789337, -11.789339, 11.152077, -12.74523, -16)
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 1:1/0 = 0
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(11.789337, -16, 11.789337, 16, 16, 16, 16, -16)
 4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, -12.107969, 11.789337, -12.107969, 12.426598, 16, 16, 16, 16, -16)
 5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -12.107969, 16, -16, -16, -16, -16, 16, -13.063862, 16, -11.789339, -12.107969)
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 1:2/0 = 0
@@ -70,17 +76,17 @@ texture = ExtResource("1_dfn4i")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1172021675]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAACAAkAAAABAAEAAAADAAkAAAABAAEAAAAEAAkAAAABAAEAAAAFAAkAAAABAAEAAAAGAAkAAAABAAEAAAAHAAkAAAABAAEAAAAJAAkAAAABAAEAAAAKAAkAAAABAAEAAAALAAkAAAABAAEAAAAMAAkAAAABAAEAAAANAAkAAAABAAEAAAAOAAkAAAABAAEAAAAPAAkAAAABAAEAAAADAAUAAAABAAAAAAANAAUAAAABAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAEAAAACAAcAAAAAAAIAAAADAAcAAAABAAIAAAAJAAcAAAABAAIAAAAKAAcAAAABAAIAAAALAAcAAAABAAIAAAAMAAcAAAABAAIAAAANAAcAAAABAAIAAAAOAAcAAAABAAIAAAAPAAcAAAACAAIAAAAPAAYAAAACAAEAAAAPAAUAAAACAAAAAAAOAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAACAAAAAAAFAAYAAAACAAEAAAAFAAcAAAACAAIAAAAEAAcAAAABAAIAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAEAAAAIAAcAAAAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAAFAAUAAAADAAAAAAAGAAUAAAADAAAAAAAEAAUAAAAFAAAAAAAEAAQAAAADAAIAAAAHAAYAAAAEAAIAAAAHAAUAAAAEAAEAAAAHAAcAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_oybhc")
 
 [node name="Pencil" parent="." unique_id=1304973671 instance=ExtResource("3_18wqi")]
 
 [node name="Player" parent="." unique_id=1612362908 instance=ExtResource("4_iqu1u")]
-position = Vector2(131, 139)
+position = Vector2(278, 139)
 floor_max_angle = 1.0471976
 max_speed = 50.0
-acceleration = 100.0
-friction = 50.0
+acceleration = 150.0
+friction = 75.0
 
 [node name="Objective" parent="." unique_id=1521158862 instance=ExtResource("5_gr1yk")]
 position = Vector2(463, 126)

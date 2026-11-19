@@ -4,8 +4,12 @@
 [ext_resource type="Script" uid="uid://cn47puvds3h6o" path="res://levels/level_base.gd" id="1_ep22m"]
 [ext_resource type="Texture2D" uid="uid://brdjs3b5tdy8" path="res://sprites/tilemap/tilemap_0.png" id="2_ep22m"]
 [ext_resource type="PackedScene" uid="uid://bbxioue7s3uqf" path="res://objects/pencil/pencil.tscn" id="2_ts4ud"]
+[ext_resource type="Texture2D" uid="uid://w70jlam7cq2e" path="res://sprites/tilemap/background_2.png" id="3_jd1fy"]
 [ext_resource type="PackedScene" uid="uid://5lyok6fan2ka" path="res://objects/player/player.tscn" id="3_ts4ud"]
 [ext_resource type="PackedScene" uid="uid://dni4156go7lwb" path="res://objects/objective/objective.tscn" id="4_jd1fy"]
+[ext_resource type="Texture2D" uid="uid://k8u236ssjjfy" path="res://sprites/tilemap_2.png" id="5_p3adb"]
+[ext_resource type="PackedScene" uid="uid://cekfojkeewhrc" path="res://objects/spring/spring.tscn" id="8_cnvg6"]
+[ext_resource type="PackedScene" uid="uid://du3qgvpbaitka" path="res://objects/enemy_cool/enemy_cool.tscn" id="10_5f4n4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnvg6"]
 texture = ExtResource("2_ep22m")
@@ -56,24 +60,71 @@ texture_region_size = Vector2i(32, 32)
 4:5/0 = 0
 5:5/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5f4n4"]
+texture = ExtResource("5_p3adb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, 12.745232, -16, 12.426601)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, -12.74523, 16, -12.74523, 16, -16)
+0:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.382492, -16, -16, -16, -16, 16, -16, 16, -12.4265995, 16)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(12.107967, -16, 11.789337, 16, 16, 16, 16, -16)
+0:3/animation_frame_0/duration = 1.0
+0:3/animation_frame_1/duration = 1.0
+0:3/animation_frame_2/duration = 1.0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.31863022, 16, -2.8676777, 12.745232, -16, 12.745232, -16, 16)
+3:3/animation_frame_0/duration = 1.0
+3:3/animation_frame_1/duration = 1.0
+3:3/animation_frame_2/duration = 1.0
+3:3/0 = 0
+0:4/animation_frame_0/duration = 1.0
+0:4/animation_frame_1/duration = 1.0
+0:4/animation_frame_2/duration = 1.0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.0539856, -10.514814, -2.8676777, -16, 16, -10.196184, 16, 16)
+3:4/animation_frame_0/duration = 1.0
+3:4/animation_frame_1/duration = 1.0
+3:4/animation_frame_2/duration = 1.0
+3:4/0 = 0
+0:5/animation_mode = 1
+0:5/animation_frame_0/duration = 1.0
+0:5/animation_frame_1/duration = 1.0
+0:5/animation_frame_2/duration = 1.0
+0:5/0 = 0
+0:6/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_p3adb"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cnvg6")
+sources/1 = SubResource("TileSetAtlasSource_5f4n4")
 
 [node name="LevelBase" type="Node2D" unique_id=1754352208]
 script = ExtResource("1_ep22m")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1656248071]
+[node name="Color" type="TextureRect" parent="." unique_id=1656248071]
 texture_filter = 1
 offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("1_da5si")
 metadata/_edit_use_anchors_ = true
 
+[node name="Texture" type="TextureRect" parent="." unique_id=477195608]
+modulate = Color(1, 1, 1, 0.47058824)
+texture_filter = 1
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("3_jd1fy")
+metadata/_edit_use_anchors_ = true
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=363279184]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAACAAkAAAABAAEAAAADAAkAAAABAAEAAAAEAAkAAAABAAEAAAAFAAkAAAABAAEAAAAGAAkAAAABAAEAAAAHAAkAAAABAAEAAAAJAAkAAAABAAEAAAAKAAkAAAABAAEAAAALAAkAAAABAAEAAAAMAAkAAAABAAEAAAANAAkAAAABAAEAAAAOAAkAAAABAAEAAAAPAAkAAAABAAEAAAADAAUAAAABAAAAAAANAAUAAAABAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAEAAAACAAcAAAAAAAIAAAADAAcAAAABAAIAAAAJAAcAAAABAAIAAAAKAAcAAAABAAIAAAALAAcAAAABAAIAAAAMAAcAAAABAAIAAAANAAcAAAABAAIAAAAOAAcAAAABAAIAAAAPAAcAAAACAAIAAAAPAAYAAAACAAEAAAAPAAUAAAACAAAAAAAOAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAACAAAAAAAFAAYAAAACAAEAAAAFAAcAAAACAAIAAAAEAAcAAAABAAIAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAEAAAAIAAcAAAAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAACAAUAAQADAAQAAAACAAYAAQAAAAIAAAACAAcAAQADAAEAAAADAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAMAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAOAAcAAQAAAAAAAAAPAAcAAQAAAAEAAAAPAAYAAQADAAIAAAAFAAUAAQAAAAQAAAAFAAYAAQADAAIAAAAFAAcAAQAAAAEAAAAEAAcAAQAAAAAAAAAIAAUAAQADAAQAAAAIAAYAAQAAAAIAAAAIAAcAAQADAAEAAAACAAgAAQAAAAUAAAADAAgAAQAAAAUAAAAEAAgAAQAAAAUAAAAFAAgAAQAAAAUAAAAGAAgAAQAAAAUAAAAHAAgAAQAAAAUAAAAIAAgAAQAAAAUAAAAJAAgAAQAAAAUAAAAKAAgAAQAAAAUAAAALAAgAAQAAAAUAAAAMAAgAAQAAAAUAAAANAAgAAQAAAAUAAAAOAAgAAQAAAAUAAAAFAAQAAQAAAAMAAAAEAAQAAQAAAAAAAAADAAQAAQAAAAAAAAACAAQAAQADAAMAAAAIAAQAAQADAAMAAAAPAAQAAQAAAAMAAAAOAAQAAQAAAAAAAAANAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAALAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAPAAUAAQAAAAQAAAA=")
 tile_set = SubResource("TileSet_p3adb")
 
 [node name="Pencil" parent="." unique_id=1304973671 instance=ExtResource("2_ts4ud")]
@@ -87,3 +138,9 @@ friction = 50.0
 
 [node name="Objective" parent="." unique_id=1521158862 instance=ExtResource("4_jd1fy")]
 position = Vector2(463, 126)
+
+[node name="Spring" parent="." unique_id=1355871732 instance=ExtResource("8_cnvg6")]
+position = Vector2(222, 258)
+
+[node name="EnemyCool" parent="." unique_id=1811177297 instance=ExtResource("10_5f4n4")]
+position = Vector2(162, 136)

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://5lyok6fan2ka"]
 
-[ext_resource type="Texture2D" uid="uid://ciqtmbsu3jd80" path="res://sprites/brush_1.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://4wjja6kffw6" path="res://objects/player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://cj652dk3vwlfu" path="res://sprites/main_cha.png" id="2_g7ett"]
+[ext_resource type="Texture2D" uid="uid://c5u3k434ibis4" path="res://sprites/main_cha_idle.png" id="2_ssrue"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_72yv8"]
 size = Vector2(30, 29)
@@ -9,15 +10,61 @@ size = Vector2(30, 29)
 [sub_resource type="CircleShape2D" id="CircleShape2D_oybhc"]
 radius = 20.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnkmh"]
+atlas = ExtResource("2_ssrue")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkryw"]
+atlas = ExtResource("2_ssrue")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow0dq"]
+atlas = ExtResource("2_ssrue")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssrue"]
+atlas = ExtResource("2_g7ett")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnjyq"]
+atlas = ExtResource("2_g7ett")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oybhc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnkmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkryw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow0dq")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssrue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnjyq")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=775762126]
+collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_rkbax")
 max_speed = 20.0
 acceleration = 50.0
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=783549029]
-texture_filter = 1
-texture = ExtResource("1_oul6g")
+friction = 74.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1854455646]
 position = Vector2(0, 0.5)
@@ -30,11 +77,18 @@ offset_bottom = 23.0
 text = "velocity"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1049068252]
-collision_mask = 8
+collision_layer = 2
+collision_mask = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=489878296]
 shape = SubResource("CircleShape2D_oybhc")
 debug_color = Color(0, 0.6270559, 0.49710685, 0.36862746)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1933265190]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_oybhc")
+animation = &"idle"
+frame_progress = 0.23018807
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
