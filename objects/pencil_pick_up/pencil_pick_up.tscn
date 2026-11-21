@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://c1cs4tk1b6cr5"]
+
+[ext_resource type="Script" uid="uid://kvi261u8ls5s" path="res://objects/pencil_pick_up/pencil_pick_up.gd" id="1_d1lq6"]
+[ext_resource type="Texture2D" uid="uid://dje8tdyq4ul0f" path="res://sprites/pencil.png" id="1_xch4r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1lq6"]
+atlas = ExtResource("1_xch4r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3en40"]
+atlas = ExtResource("1_xch4r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rukqh"]
+atlas = ExtResource("1_xch4r")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oybhc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1lq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3en40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rukqh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmymc"]
+radius = 16.03122
+
+[node name="PencilPickUp" type="Node2D" unique_id=41791010]
+script = ExtResource("1_d1lq6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1031288366]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_oybhc")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1907082003]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1654984360]
+shape = SubResource("CircleShape2D_gmymc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

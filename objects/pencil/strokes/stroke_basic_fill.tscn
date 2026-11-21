@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oybhc"]
 size = Vector2(1, 6)
 
-[node name="StrokeBasicFill" type="StaticBody2D" unique_id=1710178736]
+[node name="StrokeBasicFill" type="AnimatableBody2D" unique_id=98064791]
 script = ExtResource("1_i4xmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=771744235]

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://qcjfwhocmy4o"]
+
+[ext_resource type="Script" uid="uid://nquurkiy4t7o" path="res://objects/ball/ball.gd" id="1_etdk3"]
+[ext_resource type="Texture2D" uid="uid://bwvxf7xxb01e8" path="res://sprites/ball.png" id="2_sqa05"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vxt0a"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqa05"]
+atlas = ExtResource("2_sqa05")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7601y"]
+atlas = ExtResource("2_sqa05")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73omd"]
+atlas = ExtResource("2_sqa05")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oybhc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqa05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7601y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73omd")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Ball" type="RigidBody2D" unique_id=1722633930]
+collision_layer = 33
+collision_mask = 63
+can_sleep = false
+script = ExtResource("1_etdk3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1748274841]
+shape = SubResource("CircleShape2D_vxt0a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=746082857]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_oybhc")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.8976029

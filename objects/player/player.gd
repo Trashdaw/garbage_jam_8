@@ -3,6 +3,7 @@ extends CharacterBody2D
 signal player_died
 
 enum DIRECTION {LEFT, RIGHT}
+@export var push_force = 1.0
 @export var enabled = true
 @export var max_speed = 1.0
 @export var acceleration = 1.0
@@ -54,6 +55,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0.0, friction * delta)
 	velocity.x = clamp(velocity.x, -max_speed, max_speed)
 	$Label.text = str(velocity.x)
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 	move_and_slide() 
 
 

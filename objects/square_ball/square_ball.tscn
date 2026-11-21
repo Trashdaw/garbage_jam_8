@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dkcyxuiv5f0gb"]
+
+[ext_resource type="Texture2D" uid="uid://bwvxf7xxb01e8" path="res://sprites/ball.png" id="1_d3bik"]
+[ext_resource type="Script" uid="uid://c03mbb0estol0" path="res://objects/square_ball/square_ball.gd" id="1_rx0ux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l151"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqa05"]
+atlas = ExtResource("1_d3bik")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7601y"]
+atlas = ExtResource("1_d3bik")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73omd"]
+atlas = ExtResource("1_d3bik")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_buxg8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqa05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7601y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73omd")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="SquareBall" type="RigidBody2D" unique_id=1076501383]
+mass = 0.5
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_rx0ux")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=299563507]
+shape = SubResource("RectangleShape2D_1l151")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1989384274]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_buxg8")
+animation = &"idle"
+autoplay = "idle"

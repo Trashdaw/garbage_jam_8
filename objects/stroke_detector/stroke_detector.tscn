@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://rsinqqdhhi6c"]
 
-[ext_resource type="Script" uid="uid://b5j6kltu6lmwk" path="res://stroke_detector.gd" id="1_hnd3l"]
+[ext_resource type="Script" uid="uid://b5j6kltu6lmwk" path="res://objects/stroke_detector/stroke_detector.gd" id="1_th21r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_udc7x"]
+radius = 6.0
 
 [node name="StrokeDetector" type="Area2D" unique_id=1018947312]
-script = ExtResource("1_hnd3l")
+script = ExtResource("1_th21r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=659926121]
+shape = SubResource("CircleShape2D_udc7x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

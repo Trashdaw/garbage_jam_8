@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cpx3662nm8k52"]
+
+[ext_resource type="Script" uid="uid://bmwusrghhulwr" path="res://objects/creator/creator.gd" id="1_y4oln"]
+
+[node name="Creator" type="Node2D" unique_id=1250977704]
+script = ExtResource("1_y4oln")
+
+[node name="Timer" type="Timer" parent="." unique_id=1509967763]

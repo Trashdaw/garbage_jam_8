@@ -4,10 +4,6 @@
 [ext_resource type="Script" uid="uid://bwkc5yrebt7rg" path="res://objects/spring/spring.gd" id="1_vkm8t"]
 [ext_resource type="Texture2D" uid="uid://ct8yohx2b8jcs" path="res://sprites/spring_idle.png" id="3_pa5qp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7x8as"]
-atlas = ExtResource("1_m62pn")
-region = Rect2(0, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_vkm8t"]
 atlas = ExtResource("1_m62pn")
 region = Rect2(32, 0, 32, 32)
@@ -31,10 +27,7 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_oybhc"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7x8as")
-}, {
-"duration": 1.0,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_vkm8t")
 }, {
 "duration": 1.0,
@@ -72,7 +65,7 @@ speed = 500.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=797380434]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_oybhc")
-animation = &"idle"
+animation = &"boing"
 autoplay = "idle"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1251688701]

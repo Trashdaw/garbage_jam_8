@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ek1e7xv3n4oi"
-path="res://.godot/imported/pencil3.png-793aba40e3cc1e6d2051cb25fe15ae38.ctex"
+uid="uid://dvi0s6nk2s81s"
+path="res://.godot/imported/eye_blushing.png-36db86e5db219d9f7a30952798f02e19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/pencil3.png"
-dest_files=["res://.godot/imported/pencil3.png-793aba40e3cc1e6d2051cb25fe15ae38.ctex"]
+source_file="res://sprites/eye_blushing.png"
+dest_files=["res://.godot/imported/eye_blushing.png-36db86e5db219d9f7a30952798f02e19.ctex"]
 
 [params]
 

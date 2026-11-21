@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bgoq226rvkgd4"]
+
+[ext_resource type="Script" uid="uid://crx7k6txcxcb8" path="res://objects/stroke_pattern_detector/stroke_pattern_detector.gd" id="1_th21r"]
+
+[node name="StrokePatternDetector" type="Node2D" unique_id=1260161080]
+script = ExtResource("1_th21r")

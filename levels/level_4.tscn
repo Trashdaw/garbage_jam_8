@@ -3,76 +3,97 @@
 [ext_resource type="Script" uid="uid://cn47puvds3h6o" path="res://levels/level_base.gd" id="1_8l0e1"]
 [ext_resource type="Texture2D" uid="uid://cdbotsaqg5s2b" path="res://sprites/tilemap/background.png" id="2_lfnxh"]
 [ext_resource type="Texture2D" uid="uid://w70jlam7cq2e" path="res://sprites/tilemap/background_2.png" id="3_lfnxh"]
-[ext_resource type="Texture2D" uid="uid://brdjs3b5tdy8" path="res://sprites/tilemap/tilemap_0.png" id="3_ofchu"]
 [ext_resource type="PackedScene" uid="uid://bbxioue7s3uqf" path="res://objects/pencil/pencil.tscn" id="4_jq78i"]
+[ext_resource type="Texture2D" uid="uid://k8u236ssjjfy" path="res://sprites/tilemap_2.png" id="4_ng40l"]
 [ext_resource type="PackedScene" uid="uid://5lyok6fan2ka" path="res://objects/player/player.tscn" id="5_lsnkt"]
 [ext_resource type="PackedScene" uid="uid://dni4156go7lwb" path="res://objects/objective/objective.tscn" id="6_wj73x"]
+[ext_resource type="PackedScene" uid="uid://c1cs4tk1b6cr5" path="res://objects/pencil_pick_up/pencil_pick_up.tscn" id="8_04hp8"]
+[ext_resource type="PackedScene" uid="uid://cvx30lm0o5vxc" path="res://objects/lava/lava.tscn" id="9_8hlpj"]
+[ext_resource type="PackedScene" uid="uid://b3ubujpwsnb04" path="res://objects/enemy/enemy.tscn" id="10_ng40l"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnvg6"]
-texture = ExtResource("3_ofchu")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vru0x"]
+texture = ExtResource("4_ng40l")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -3.8235703, -5.098091)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, -16, -16, -16, -16, 16)
-1:0/0/physics_layer_0/polygon_0/one_way = true
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.372616, -7.0098763, -16, -16, -16, 16, 16, 16)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, 12.745232, -16, 12.426601)
 3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, -12.74523, 16, -12.74523, 16, -16)
+0:1/animation_mode = 1
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
 0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
-1:1/0 = 0
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, 12.426601, 12.426598, 12.426601, 12.426598, -16)
+3:1/animation_mode = 1
+3:1/animation_frame_0/duration = 1.0
+3:1/animation_frame_1/duration = 1.0
+3:1/animation_frame_2/duration = 1.0
 3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, 12.107967, -12.74523, 11.470707, -12.74523, -16)
+0:2/animation_mode = 1
 0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
-2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.382492, -16, -16, -16, -16, 16, -16, 16, -12.4265995, 16)
 3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(12.107967, -16, 11.789337, 16, 16, 16, 16, -16)
+0:3/animation_frame_0/duration = 1.0
+0:3/animation_frame_1/duration = 1.0
+0:3/animation_frame_2/duration = 1.0
 0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.31863022, 16, -2.8676777, 12.745232, -16, 12.745232, -16, 16)
+3:3/animation_frame_0/duration = 1.0
+3:3/animation_frame_1/duration = 1.0
+3:3/animation_frame_2/duration = 1.0
 3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, 12.426601, -4.1422005, 12.745232, -10.196184, 16)
+3:4/animation_frame_0/duration = 1.0
+3:4/animation_frame_1/duration = 1.0
+3:4/animation_frame_2/duration = 1.0
 3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -9.240292, -16, -12.107969, -12.4265995)
+0:5/animation_mode = 1
+0:5/animation_frame_0/duration = 1.0
+0:5/animation_frame_1/duration = 1.0
+0:5/animation_frame_2/duration = 1.0
 0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
+0:6/animation_frame_0/duration = 1.0
+0:6/animation_frame_1/duration = 1.0
+0:6/animation_frame_2/duration = 1.0
+0:6/0 = 0
+0:7/0 = 0
+0:4/animation_frame_0/duration = 1.0
+0:4/animation_frame_1/duration = 1.0
+0:4/animation_frame_2/duration = 1.0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.0539856, -10.514814, -2.8676777, -16, 16, -10.196184, 16, 16)
+3:5/animation_frame_0/duration = 1.0
+3:5/animation_frame_1/duration = 1.0
+3:5/animation_frame_2/duration = 1.0
 3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
+3:6/animation_frame_0/duration = 1.0
+3:6/animation_frame_1/duration = 1.0
+3:6/animation_frame_2/duration = 1.0
+3:6/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_p3adb"]
+[sub_resource type="TileSet" id="TileSet_5oqfd"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_cnvg6")
+sources/1 = SubResource("TileSetAtlasSource_vru0x")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mt0c"]
+size = Vector2(640, 20)
 
 [node name="LevelBase" type="Node2D" unique_id=1754352208]
 script = ExtResource("1_8l0e1")
+next_level = "res://levels/level_5.tscn"
 
-[node name="Color" type="TextureRect" parent="." unique_id=913634016]
+[node name="Color" type="TextureRect" parent="." unique_id=1098160260]
 texture_filter = 1
 offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("2_lfnxh")
 metadata/_edit_use_anchors_ = true
 
-[node name="Texture" type="TextureRect" parent="." unique_id=1252814350]
+[node name="Texture" type="TextureRect" parent="." unique_id=1207507939]
 modulate = Color(1, 1, 1, 0.47058824)
 texture_filter = 1
 offset_right = 640.0
@@ -80,19 +101,36 @@ offset_bottom = 360.0
 texture = ExtResource("3_lfnxh")
 metadata/_edit_use_anchors_ = true
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=363279184]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2073032861]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAADAAUAAAABAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAEAAAACAAcAAAAAAAIAAAADAAcAAAABAAIAAAAJAAcAAAABAAIAAAAKAAcAAAABAAIAAAAEAAUAAAABAAAAAAAFAAUAAAACAAAAAAAFAAYAAAACAAEAAAAFAAcAAAACAAIAAAAEAAcAAAABAAIAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAEAAAAIAAcAAAAAAAIAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAACAAAAAAALAAYAAAACAAEAAAALAAcAAAACAAIAAAAOAAUAAAAAAAAAAAAPAAUAAAABAAAAAAAQAAUAAAABAAAAAAARAAUAAAACAAAAAAARAAYAAAACAAEAAAARAAcAAAACAAIAAAAQAAcAAAABAAIAAAAPAAcAAAABAAIAAAAOAAcAAAAAAAIAAAAOAAYAAAAAAAEAAAACAAoAAAAAAAQAAAADAAoAAAAAAAQAAAAEAAoAAAAAAAQAAAAFAAoAAAAAAAQAAAAGAAoAAAAAAAQAAAAHAAoAAAAAAAQAAAAIAAoAAAAAAAQAAAAJAAoAAAAAAAQAAAAKAAoAAAAAAAQAAAALAAoAAAAAAAQAAAAMAAoAAAAAAAQAAAANAAoAAAAAAAQAAAAOAAoAAAAAAAQAAAAPAAoAAAAAAAQAAAAQAAoAAAAAAAQAAAARAAoAAAAAAAQAAAASAAoAAAAAAAQAAAATAAoAAAAAAAQAAAATAAsAAAAAAAQAAAASAAsAAAAAAAQAAAARAAsAAAAAAAQAAAAQAAsAAAAAAAQAAAAPAAsAAAAAAAQAAAAOAAsAAAAAAAQAAAANAAsAAAAAAAQAAAAMAAsAAAAAAAQAAAALAAsAAAAAAAQAAAAKAAsAAAAAAAQAAAAJAAsAAAAAAAQAAAAIAAsAAAAAAAQAAAAHAAsAAAAAAAQAAAAGAAsAAAAAAAQAAAAFAAsAAAAAAAQAAAAEAAsAAAAAAAQAAAADAAsAAAAAAAQAAAACAAsAAAAAAAQAAAABAAsAAAAAAAQAAAAAAAsAAAAAAAQAAAAAAAoAAAAAAAQAAAABAAoAAAAAAAQAAAATAAkAAAAAAAMAAAASAAkAAAAAAAMAAAARAAkAAAAAAAMAAAAQAAkAAAAAAAMAAAAPAAkAAAAAAAMAAAAOAAkAAAAAAAMAAAANAAkAAAAAAAMAAAAMAAkAAAAAAAMAAAALAAkAAAAAAAMAAAAKAAkAAAAAAAMAAAAJAAkAAAAAAAMAAAAIAAkAAAAAAAMAAAAHAAkAAAAAAAMAAAAGAAkAAAAAAAMAAAAFAAkAAAAAAAMAAAAEAAkAAAAAAAMAAAADAAkAAAAAAAMAAAACAAkAAAAAAAMAAAABAAkAAAAAAAMAAAAAAAkAAAAAAAMAAAA=")
-tile_set = SubResource("TileSet_p3adb")
+position = Vector2(0, 96)
+tile_map_data = PackedByteArray("AAACAAQAAQADAAMAAAADAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAACAAUAAQADAAUAAAAFAAQAAQAAAAAAAAAAAAcAAQAAAAYAAAABAAcAAQAAAAYAAAACAAcAAQAAAAYAAAADAAcAAQAAAAYAAAAEAAcAAQAAAAYAAAAFAAcAAQAAAAYAAAAGAAcAAQAAAAYAAAAHAAcAAQAAAAYAAAAIAAcAAQAAAAYAAAAJAAcAAQAAAAYAAAAKAAcAAQAAAAYAAAALAAcAAQAAAAYAAAAMAAcAAQAAAAYAAAANAAcAAQAAAAYAAAAOAAcAAQAAAAYAAAAPAAcAAQAAAAYAAAAQAAcAAQAAAAYAAAARAAcAAQAAAAYAAAASAAcAAQAAAAYAAAATAAcAAQAAAAYAAAAAAAgAAQAAAAcAAAABAAgAAQAAAAcAAAACAAgAAQAAAAcAAAADAAgAAQAAAAcAAAAEAAgAAQAAAAcAAAAFAAgAAQAAAAcAAAAGAAgAAQAAAAcAAAAHAAgAAQAAAAcAAAAIAAgAAQAAAAcAAAAJAAgAAQAAAAcAAAAKAAgAAQAAAAcAAAALAAgAAQAAAAcAAAAMAAgAAQAAAAcAAAANAAgAAQAAAAcAAAAOAAgAAQAAAAcAAAAPAAgAAQAAAAcAAAAQAAgAAQAAAAcAAAARAAgAAQAAAAcAAAASAAgAAQAAAAcAAAATAAgAAQAAAAcAAAADAAYAAQADAAAAAAAEAAYAAQADAAAAAAAFAAYAAQADAAAAAAACAAYAAQADAAYAAAARAAQAAQAAAAMAAAARAAUAAQAAAAUAAAARAAYAAQADAAAAAAAGAAYAAQADAAAAAAAHAAYAAQADAAAAAAAIAAYAAQADAAAAAAAJAAYAAQADAAAAAAAKAAYAAQADAAAAAAALAAYAAQADAAAAAAAMAAYAAQADAAAAAAANAAYAAQADAAAAAAAOAAYAAQADAAAAAAAPAAYAAQADAAAAAAAQAAYAAQADAAAAAAAGAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAIAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAALAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAANAAQAAQAAAAAAAAAOAAQAAQAAAAAAAAAPAAQAAQAAAAAAAAAQAAQAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_5oqfd")
 
 [node name="Pencil" parent="." unique_id=1304973671 instance=ExtResource("4_jq78i")]
+visible = false
 
 [node name="Player" parent="." unique_id=775762126 instance=ExtResource("5_lsnkt")]
-position = Vector2(120, 132)
+position = Vector2(95, 235)
 floor_max_angle = 1.0471976
 max_speed = 50.0
 acceleration = 100.0
 friction = 50.0
 
 [node name="Objective" parent="." unique_id=1521158862 instance=ExtResource("6_wj73x")]
-position = Vector2(463, 126)
+position = Vector2(322, 220)
+
+[node name="PencilPickUp" parent="." unique_id=41791010 node_paths=PackedStringArray("pencil") instance=ExtResource("8_04hp8")]
+position = Vector2(162, 234)
+pencil = NodePath("../Pencil")
+
+[node name="Lava" parent="." unique_id=1276768460 instance=ExtResource("9_8hlpj")]
+position = Vector2(40, 344)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava" unique_id=1035843905]
+position = Vector2(280, 0)
+shape = SubResource("RectangleShape2D_8mt0c")
+
+[node name="Enemy" parent="." unique_id=1595756045 instance=ExtResource("10_ng40l")]
+position = Vector2(396, 236)
+direction = 0

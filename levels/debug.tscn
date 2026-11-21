@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bbxioue7s3uqf" path="res://objects/pencil/pencil.tscn" id="3_18wqi"]
 [ext_resource type="PackedScene" uid="uid://5lyok6fan2ka" path="res://objects/player/player.tscn" id="4_iqu1u"]
 [ext_resource type="PackedScene" uid="uid://dni4156go7lwb" path="res://objects/objective/objective.tscn" id="5_gr1yk"]
+[ext_resource type="PackedScene" uid="uid://bgoq226rvkgd4" path="res://objects/stroke_pattern_detector/stroke_pattern_detector.tscn" id="6_18wqi"]
+[ext_resource type="PackedScene" uid="uid://rsinqqdhhi6c" path="res://objects/stroke_detector/stroke_detector.tscn" id="7_dtbd0"]
+[ext_resource type="Texture2D" uid="uid://bicoruouar724" path="res://sprites/heart.png" id="8_4eisu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5e40l"]
 texture = ExtResource("2_gr1yk")
@@ -79,8 +82,6 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAAFAAUAAAADAAAAAAAGAAUAAAADAAAAAAAEAAUAAAAFAAAAAAAEAAQAAAADAAIAAAAHAAYAAAAEAAIAAAAHAAUAAAAEAAEAAAAHAAcAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_oybhc")
 
-[node name="Pencil" parent="." unique_id=1304973671 instance=ExtResource("3_18wqi")]
-
 [node name="Player" parent="." unique_id=1612362908 instance=ExtResource("4_iqu1u")]
 position = Vector2(278, 139)
 floor_max_angle = 1.0471976
@@ -90,3 +91,38 @@ friction = 75.0
 
 [node name="Objective" parent="." unique_id=1521158862 instance=ExtResource("5_gr1yk")]
 position = Vector2(463, 126)
+enabled = false
+
+[node name="StrokePatternDetector" parent="." unique_id=1260161080 node_paths=PackedStringArray("pattern", "node_to_enable") instance=ExtResource("6_18wqi")]
+position = Vector2(206, -58.999996)
+scale = Vector2(0.96132153, 0.95396894)
+pattern = [NodePath("StrokeDetector"), NodePath("StrokeDetector2"), NodePath("StrokeDetector3"), NodePath("StrokeDetector4"), NodePath("StrokeDetector5"), NodePath("StrokeDetector6")]
+node_to_enable = NodePath("../Objective")
+
+[node name="StrokeDetector" parent="StrokePatternDetector" unique_id=1018947312 instance=ExtResource("7_dtbd0")]
+position = Vector2(386.96732, 164.57558)
+
+[node name="StrokeDetector2" parent="StrokePatternDetector" unique_id=1453568555 instance=ExtResource("7_dtbd0")]
+position = Vector2(362.00165, 139.41754)
+
+[node name="StrokeDetector3" parent="StrokePatternDetector" unique_id=1457287953 instance=ExtResource("7_dtbd0")]
+position = Vector2(386.9673, 120.548996)
+
+[node name="StrokeDetector4" parent="StrokePatternDetector" unique_id=672983853 instance=ExtResource("7_dtbd0")]
+position = Vector2(409.85245, 140.46579)
+
+[node name="StrokeDetector5" parent="StrokePatternDetector" unique_id=223813487 instance=ExtResource("7_dtbd0")]
+position = Vector2(408.81226, 120.548996)
+
+[node name="StrokeDetector6" parent="StrokePatternDetector" unique_id=30016459 instance=ExtResource("7_dtbd0")]
+position = Vector2(367.20282, 114.25948)
+
+[node name="Heart" type="Sprite2D" parent="StrokePatternDetector" unique_id=1111150764]
+texture_filter = 1
+position = Vector2(386.96732, 134.17627)
+texture = ExtResource("8_4eisu")
+
+[node name="Pencil" parent="." unique_id=1304973671 instance=ExtResource("3_18wqi")]
+position = Vector2(0, -3.8146973e-06)
+scale = Vector2(1, 0.99999994)
+pencil_gauge = 20.0

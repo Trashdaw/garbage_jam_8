@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1w4dl"]
 radius = 4.0
 
-[node name="Stroke" type="StaticBody2D" unique_id=497961882]
+[node name="Stroke" type="AnimatableBody2D" unique_id=691340047]
 script = ExtResource("1_3sp02")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219163963]

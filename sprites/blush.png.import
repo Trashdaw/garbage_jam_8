@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x0o3ywqqheq1"
-path="res://.godot/imported/pencil2.png-fdc1998df019b3da13005274f0ea7ff9.ctex"
+uid="uid://beb7o5lu3yfkp"
+path="res://.godot/imported/blush.png-2e926d54f0f7888240ab862c4814c063.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/pencil2.png"
-dest_files=["res://.godot/imported/pencil2.png-fdc1998df019b3da13005274f0ea7ff9.ctex"]
+source_file="res://sprites/blush.png"
+dest_files=["res://.godot/imported/blush.png-2e926d54f0f7888240ab862c4814c063.ctex"]
 
 [params]
 

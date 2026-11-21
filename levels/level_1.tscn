@@ -5,9 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://w70jlam7cq2e" path="res://sprites/tilemap/background_2.png" id="3_btoec"]
 [ext_resource type="Texture2D" uid="uid://brdjs3b5tdy8" path="res://sprites/tilemap/tilemap_0.png" id="3_i1u7t"]
 [ext_resource type="PackedScene" uid="uid://5lyok6fan2ka" path="res://objects/player/player.tscn" id="4_uimjd"]
+[ext_resource type="Texture2D" uid="uid://k8u236ssjjfy" path="res://sprites/tilemap_2.png" id="5_3sk1a"]
 [ext_resource type="PackedScene" uid="uid://dni4156go7lwb" path="res://objects/objective/objective.tscn" id="5_j0olh"]
+[ext_resource type="PackedScene" uid="uid://bbxioue7s3uqf" path="res://objects/pencil/pencil.tscn" id="6_08mmt"]
+[ext_resource type="FontFile" uid="uid://ephceiso4fik" path="res://font/CsbelricpixelRegularDemo-WpGYv.otf" id="9_3sk1a"]
+[ext_resource type="Texture2D" uid="uid://csm5eiuvcsiye" path="res://sprites/inputs/input_a.png" id="10_5ot28"]
+[ext_resource type="Texture2D" uid="uid://dwvthetli6jt1" path="res://sprites/inputs/input_d.png" id="11_aerfg"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnvg6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l53as"]
 texture = ExtResource("3_i1u7t")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -18,42 +23,181 @@ texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.372616, -7.0098763, -16, -16, -16, 16, 16, 16)
 3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(12.107967, -16, 16, -16, 16, 16, -16, 16, -16, 11.742844, 12.230394, 11.690819)
 4:0/0 = 0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -11.789339, -16, -11.510959, 12.949829, 16, 12.76997, 16, 16, -16, 16, -16, -16)
+5:0/0 = 0
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
+1:1/0 = 0
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, 11.470707, 16, 11.789337, -10.833445, -16, -11.789337, -16, -16)
 4:1/0 = 0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -12.74523, -11.470707, -12.4265995, -11.789339, 16, -16, 16, -16, -16)
+5:1/0 = 0
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 1:2/0 = 0
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
-1:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_p3adb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3sk1a"]
+texture = ExtResource("5_3sk1a")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, 12.745232, -16, 12.426601)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, -12.74523, 16, -12.74523, 16, -16)
+0:1/animation_mode = 1
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, 12.426601, 12.426598, 12.426601, 12.426598, -16)
+3:1/animation_mode = 1
+3:1/animation_frame_0/duration = 1.0
+3:1/animation_frame_1/duration = 1.0
+3:1/animation_frame_2/duration = 1.0
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, 12.107967, -12.74523, 11.470707, -12.74523, -16)
+0:2/animation_mode = 1
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.382492, -16, -16, -16, -16, 16, -16, 16, -12.4265995, 16)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(12.107967, -16, 11.789337, 16, 16, 16, 16, -16)
+0:3/animation_frame_0/duration = 1.0
+0:3/animation_frame_1/duration = 1.0
+0:3/animation_frame_2/duration = 1.0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.31863022, 16, -2.8676777, 12.745232, -16, 12.745232, -16, 16)
+3:3/animation_frame_0/duration = 1.0
+3:3/animation_frame_1/duration = 1.0
+3:3/animation_frame_2/duration = 1.0
+3:3/0 = 0
+3:4/animation_frame_0/duration = 1.0
+3:4/animation_frame_1/duration = 1.0
+3:4/animation_frame_2/duration = 1.0
+3:4/0 = 0
+0:5/animation_mode = 1
+0:5/animation_frame_0/duration = 1.0
+0:5/animation_frame_1/duration = 1.0
+0:5/animation_frame_2/duration = 1.0
+0:5/0 = 0
+0:6/animation_frame_0/duration = 1.0
+0:6/animation_frame_1/duration = 1.0
+0:6/animation_frame_2/duration = 1.0
+0:6/0 = 0
+0:7/0 = 0
+0:4/animation_frame_0/duration = 1.0
+0:4/animation_frame_1/duration = 1.0
+0:4/animation_frame_2/duration = 1.0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.0539856, -10.514814, -2.8676777, -16, 16, -10.196184, 16, 16)
+3:5/animation_frame_0/duration = 1.0
+3:5/animation_frame_1/duration = 1.0
+3:5/animation_frame_2/duration = 1.0
+3:5/0 = 0
+3:6/animation_frame_0/duration = 1.0
+3:6/animation_frame_1/duration = 1.0
+3:6/animation_frame_2/duration = 1.0
+3:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_betor"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_cnvg6")
+sources/1 = SubResource("TileSetAtlasSource_3sk1a")
+sources/0 = SubResource("TileSetAtlasSource_l53as")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmsli"]
+atlas = ExtResource("10_5ot28")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_betor"]
+atlas = ExtResource("10_5ot28")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjtdm"]
+atlas = ExtResource("10_5ot28")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oybhc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmsli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_betor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjtdm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgw3c"]
+atlas = ExtResource("11_aerfg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrvbd"]
+atlas = ExtResource("11_aerfg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqlok"]
+atlas = ExtResource("11_aerfg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_udc7x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgw3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrvbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqlok")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="LevelBase" type="Node2D" unique_id=1754352208]
 script = ExtResource("1_levkr")
 next_level = "res://levels/level_2.tscn"
 
-[node name="Color" type="TextureRect" parent="." unique_id=918103513]
+[node name="Color" type="TextureRect" parent="." unique_id=900851971]
 texture_filter = 1
 offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("2_tx31t")
 metadata/_edit_use_anchors_ = true
 
-[node name="Texture" type="TextureRect" parent="." unique_id=1691043412]
+[node name="Texture" type="TextureRect" parent="." unique_id=1011020709]
 modulate = Color(1, 1, 1, 0.47058824)
 texture_filter = 1
 offset_right = 640.0
@@ -61,17 +205,80 @@ offset_bottom = 360.0
 texture = ExtResource("3_btoec")
 metadata/_edit_use_anchors_ = true
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=363279184]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1787169761]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAADAAUAAAABAAAAAAANAAUAAAABAAAAAAAOAAUAAAACAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAAIAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAUAAAABAAAAAAAPAAcAAAAAAAIAAAAQAAgAAAABAAAAAAARAAgAAAABAAAAAAASAAgAAAABAAAAAAATAAgAAAABAAAAAAABAAQAAAACAAEAAAABAAMAAAACAAEAAAABAAIAAAACAAEAAAABAAEAAAACAAEAAAABAAAAAAACAAEAAAACAAUAAAABAAAAAAAPAAgAAAABAAAAAAAOAAYAAAACAAEAAAA=")
-tile_set = SubResource("TileSet_p3adb")
+position = Vector2(0, 96)
+tile_map_data = PackedByteArray("AAADAAAAAQADAAMAAAADAAEAAQADAAQAAAADAAIAAQAAAAIAAAADAAMAAQAAAAIAAAADAAQAAQADAAEAAAAEAAAAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAAAAQAAAAAAAAAFAAQAAQAAAAAAAAAGAAAAAQAAAAAAAAAGAAQAAQAAAAAAAAAHAAAAAQAAAAAAAAAHAAQAAQAAAAAAAAAIAAAAAQAAAAAAAAAIAAQAAQAAAAAAAAAJAAAAAQAAAAAAAAAJAAQAAQAAAAAAAAAKAAAAAQAAAAAAAAAKAAQAAQAAAAAAAAALAAAAAQAAAAAAAAALAAQAAQAAAAAAAAAMAAAAAQAAAAAAAAAMAAQAAQAAAAAAAAANAAAAAQAAAAAAAAANAAQAAQAAAAAAAAAOAAAAAQAAAAAAAAAOAAQAAQAAAAAAAAAPAAAAAQAAAAAAAAAPAAQAAQAAAAAAAAAQAAAAAQAAAAMAAAAQAAEAAQAAAAQAAAAQAAIAAQADAAIAAAAQAAMAAQADAAIAAAAQAAQAAQAAAAEAAAA=")
+tile_set = SubResource("TileSet_betor")
+
+[node name="Pencil" parent="." unique_id=1304973671 instance=ExtResource("6_08mmt")]
+visible = false
 
 [node name="Player" parent="." unique_id=775762126 instance=ExtResource("4_uimjd")]
-position = Vector2(120, 132)
+position = Vector2(183, 232)
 floor_max_angle = 1.0471976
 max_speed = 50.0
 acceleration = 100.0
 friction = 50.0
 
 [node name="Objective" parent="." unique_id=1521158862 instance=ExtResource("5_j0olh")]
-position = Vector2(593, 221)
+position = Vector2(446, 221)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1768102451]
+offset_left = 223.0
+offset_top = 46.0
+offset_right = 427.0
+offset_bottom = 86.0
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1957352386]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_3sk1a")
+theme_override_font_sizes/font_size = 18
+text = "PRESS"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer" unique_id=56379947]
+texture_filter = 1
+position = Vector2(78, 19)
+sprite_frames = SubResource("SpriteFrames_oybhc")
+autoplay = "default"
+frame_progress = 0.32573053
+
+[node name="Label2" type="Label" parent="HBoxContainer" unique_id=593036736]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_3sk1a")
+theme_override_font_sizes/font_size = 18
+text = "TO MOVE LEFT"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1460044274]
+offset_left = 223.0
+offset_top = 84.0
+offset_right = 427.0
+offset_bottom = 124.0
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="HBoxContainer2" unique_id=1312375581]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_3sk1a")
+theme_override_font_sizes/font_size = 18
+text = "PRESS"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer2" unique_id=1122957303]
+texture_filter = 1
+position = Vector2(78, 19)
+sprite_frames = SubResource("SpriteFrames_udc7x")
+autoplay = "default"
+
+[node name="Label2" type="Label" parent="HBoxContainer2" unique_id=1296187718]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_3sk1a")
+theme_override_font_sizes/font_size = 18
+text = "TO MOVE RIGHT"

@@ -7,9 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://5lyok6fan2ka" path="res://objects/player/player.tscn" id="4_dfjjl"]
 [ext_resource type="PackedScene" uid="uid://bbxioue7s3uqf" path="res://objects/pencil/pencil.tscn" id="4_ilhis"]
 [ext_resource type="PackedScene" uid="uid://dni4156go7lwb" path="res://objects/objective/objective.tscn" id="5_at1ld"]
-[ext_resource type="PackedScene" uid="uid://b3ubujpwsnb04" path="res://objects/enemy/enemy.tscn" id="8_dfjjl"]
+[ext_resource type="Texture2D" uid="uid://k8u236ssjjfy" path="res://sprites/tilemap_2.png" id="5_sd18g"]
+[ext_resource type="PackedScene" uid="uid://c1cs4tk1b6cr5" path="res://objects/pencil_pick_up/pencil_pick_up.tscn" id="9_at1ld"]
+[ext_resource type="PackedScene" uid="uid://cvx30lm0o5vxc" path="res://objects/lava/lava.tscn" id="10_sd18g"]
+[ext_resource type="FontFile" uid="uid://ephceiso4fik" path="res://font/CsbelricpixelRegularDemo-WpGYv.otf" id="10_wcjpl"]
+[ext_resource type="Texture2D" uid="uid://csm5eiuvcsiye" path="res://sprites/inputs/input_a.png" id="11_5orea"]
+[ext_resource type="Texture2D" uid="uid://dwvthetli6jt1" path="res://sprites/inputs/input_d.png" id="12_0ourt"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnvg6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sd18g"]
 texture = ExtResource("3_ep78u")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -58,22 +63,184 @@ texture_region_size = Vector2i(32, 32)
 4:5/0 = 0
 5:5/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_p3adb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vm7no"]
+texture = ExtResource("5_sd18g")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, 12.745232, -16, 12.426601)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, -12.74523, 16, -12.74523, 16, -16)
+0:1/animation_mode = 1
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16, -16, 12.426601, 12.426598, 12.426601, 12.426598, -16)
+3:1/animation_mode = 1
+3:1/animation_frame_0/duration = 1.0
+3:1/animation_frame_1/duration = 1.0
+3:1/animation_frame_2/duration = 1.0
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, 12.107967, -12.74523, 11.470707, -12.74523, -16)
+0:2/animation_mode = 1
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.382492, -16, -16, -16, -16, 16, -16, 16, -12.4265995, 16)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(12.107967, -16, 11.789337, 16, 16, 16, 16, -16)
+0:3/animation_frame_0/duration = 1.0
+0:3/animation_frame_1/duration = 1.0
+0:3/animation_frame_2/duration = 1.0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.31863022, 16, -2.8676777, 12.745232, -16, 12.745232, -16, 16)
+3:3/animation_frame_0/duration = 1.0
+3:3/animation_frame_1/duration = 1.0
+3:3/animation_frame_2/duration = 1.0
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, 16, 12.426601, -4.1422005, 12.745232, -10.196184, 16)
+3:4/animation_frame_0/duration = 1.0
+3:4/animation_frame_1/duration = 1.0
+3:4/animation_frame_2/duration = 1.0
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, 16, 16, 16, -16, -9.240292, -16, -12.107969, -12.4265995)
+0:5/animation_mode = 1
+0:5/animation_frame_0/duration = 1.0
+0:5/animation_frame_1/duration = 1.0
+0:5/animation_frame_2/duration = 1.0
+0:5/0 = 0
+0:6/animation_frame_0/duration = 1.0
+0:6/animation_frame_1/duration = 1.0
+0:6/animation_frame_2/duration = 1.0
+0:6/0 = 0
+0:7/0 = 0
+0:4/animation_frame_0/duration = 1.0
+0:4/animation_frame_1/duration = 1.0
+0:4/animation_frame_2/duration = 1.0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.0539856, -10.514814, -2.8676777, -16, 16, -10.196184, 16, 16)
+3:5/animation_frame_0/duration = 1.0
+3:5/animation_frame_1/duration = 1.0
+3:5/animation_frame_2/duration = 1.0
+3:5/0 = 0
+3:6/animation_frame_0/duration = 1.0
+3:6/animation_frame_1/duration = 1.0
+3:6/animation_frame_2/duration = 1.0
+3:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5orea"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_cnvg6")
+sources/1 = SubResource("TileSetAtlasSource_vm7no")
+sources/0 = SubResource("TileSetAtlasSource_sd18g")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmsli"]
+atlas = ExtResource("11_5orea")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_betor"]
+atlas = ExtResource("11_5orea")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjtdm"]
+atlas = ExtResource("11_5orea")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w200a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmsli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_betor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjtdm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgw3c"]
+atlas = ExtResource("12_0ourt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrvbd"]
+atlas = ExtResource("12_0ourt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqlok"]
+atlas = ExtResource("12_0ourt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uo0vl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgw3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrvbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqlok")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_wcjpl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5orea"]
+resource_name = "tutorial"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666666, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ourt"]
+_data = {
+&"RESET": SubResource("Animation_wcjpl"),
+&"tutorial": SubResource("Animation_5orea")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oybhc"]
+size = Vector2(640, 20)
 
 [node name="LevelBase" type="Node2D" unique_id=1754352208]
 script = ExtResource("1_5722l")
+next_level = "res://levels/level_3.tscn"
 
-[node name="Color" type="TextureRect" parent="." unique_id=913634016]
+[node name="Color" type="TextureRect" parent="." unique_id=1233972358]
 texture_filter = 1
 offset_right = 640.0
 offset_bottom = 360.0
 texture = ExtResource("2_ilhis")
 metadata/_edit_use_anchors_ = true
 
-[node name="Texture" type="TextureRect" parent="." unique_id=1252814350]
+[node name="Texture" type="TextureRect" parent="." unique_id=491418308]
 modulate = Color(1, 1, 1, 0.47058824)
 texture_filter = 1
 offset_right = 640.0
@@ -81,24 +248,106 @@ offset_bottom = 360.0
 texture = ExtResource("3_dfjjl")
 metadata/_edit_use_anchors_ = true
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=363279184]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=60665584]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAAQAAcAAAACAAEAAAAQAAkAAAACAAIAAAAQAAgAAAACAAEAAAAQAAYAAAACAAEAAAAQAAUAAAACAAEAAAAQAAQAAAACAAEAAAAQAAMAAAACAAEAAAAQAAIAAAACAAEAAAAQAAEAAAACAAEAAAAQAAAAAAACAAEAAAAEAAYAAAACAAAAAAADAAYAAAABAAAAAAACAAMAAAAAAAEAAAACAAIAAAAAAAEAAAACAAEAAAAAAAEAAAACAAAAAAAAAAEAAAACAAQAAAAAAAEAAAACAAUAAAAAAAIAAAAEAAcAAAACAAEAAAAEAAgAAAACAAEAAAAFAAkAAAAAAAIAAAAGAAoAAAABAAAAAAAHAAoAAAABAAAAAAAIAAoAAAABAAAAAAAJAAoAAAABAAAAAAAKAAoAAAABAAAAAAALAAoAAAABAAAAAAAMAAoAAAABAAAAAAANAAoAAAABAAAAAAAOAAoAAAABAAAAAAAPAAoAAAABAAAAAAA=")
-tile_set = SubResource("TileSet_p3adb")
+position = Vector2(0, 96)
+tile_map_data = PackedByteArray("AAACAAQAAQADAAMAAAADAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAACAAUAAQADAAUAAAAFAAQAAQAAAAMAAAAAAAcAAQAAAAYAAAABAAcAAQAAAAYAAAACAAcAAQAAAAYAAAADAAcAAQAAAAYAAAAEAAcAAQAAAAYAAAAFAAcAAQAAAAYAAAAGAAcAAQAAAAYAAAAHAAcAAQAAAAYAAAAIAAcAAQAAAAYAAAAJAAcAAQAAAAYAAAAKAAcAAQAAAAYAAAALAAcAAQAAAAYAAAAMAAcAAQAAAAYAAAANAAcAAQAAAAYAAAAOAAcAAQAAAAYAAAAPAAcAAQAAAAYAAAAQAAcAAQAAAAYAAAARAAcAAQAAAAYAAAASAAcAAQAAAAYAAAATAAcAAQAAAAYAAAAAAAgAAQAAAAcAAAABAAgAAQAAAAcAAAACAAgAAQAAAAcAAAADAAgAAQAAAAcAAAAEAAgAAQAAAAcAAAAFAAgAAQAAAAcAAAAGAAgAAQAAAAcAAAAHAAgAAQAAAAcAAAAIAAgAAQAAAAcAAAAJAAgAAQAAAAcAAAAKAAgAAQAAAAcAAAALAAgAAQAAAAcAAAAMAAgAAQAAAAcAAAANAAgAAQAAAAcAAAAOAAgAAQAAAAcAAAAPAAgAAQAAAAcAAAAQAAgAAQAAAAcAAAARAAgAAQAAAAcAAAASAAgAAQAAAAcAAAATAAgAAQAAAAcAAAADAAYAAQADAAAAAAAEAAYAAQADAAAAAAAFAAYAAQADAAYAAAACAAYAAQADAAYAAAAJAAQAAQAAAAAAAAAJAAYAAQADAAAAAAAKAAQAAQAAAAAAAAAKAAYAAQADAAAAAAAOAAQAAQADAAMAAAAOAAUAAQADAAUAAAAOAAYAAQADAAYAAAAPAAQAAQAAAAAAAAAPAAYAAQADAAAAAAAQAAQAAQAAAAAAAAAQAAYAAQADAAAAAAARAAQAAQAAAAAAAAARAAYAAQADAAAAAAASAAQAAQAAAAMAAAASAAUAAQAAAAUAAAASAAYAAQADAAYAAAAFAAUAAQAAAAUAAAAJAAUAAQADAAUAAAAKAAUAAQAAAAUAAAA=")
+tile_set = SubResource("TileSet_5orea")
 
 [node name="Pencil" parent="." unique_id=1304973671 instance=ExtResource("4_ilhis")]
+visible = false
 
 [node name="Player" parent="." unique_id=775762126 instance=ExtResource("4_dfjjl")]
-position = Vector2(115, 174)
+position = Vector2(95, 235)
 floor_max_angle = 1.0471976
 max_speed = 50.0
 acceleration = 100.0
 friction = 50.0
 
 [node name="Objective" parent="." unique_id=1521158862 instance=ExtResource("5_at1ld")]
-position = Vector2(337, 283)
+position = Vector2(526, 221)
 
-[node name="Enemy" parent="." unique_id=1595756045 instance=ExtResource("8_dfjjl")]
-position = Vector2(415, 185)
-direction = 0
-speed = 2000.0
+[node name="Tutorial" type="Control" parent="." unique_id=1460257096]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 162.0
+offset_top = 234.0
+offset_right = 202.0
+offset_bottom = 274.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial" unique_id=236861735]
+layout_mode = 0
+offset_left = 59.0
+offset_top = -149.0
+offset_right = 263.0
+offset_bottom = -109.0
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="Tutorial/HBoxContainer" unique_id=180684218]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_wcjpl")
+theme_override_font_sizes/font_size = 18
+text = "PRESS"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorial/HBoxContainer" unique_id=894754258]
+texture_filter = 1
+position = Vector2(78, 19)
+sprite_frames = SubResource("SpriteFrames_w200a")
+autoplay = "default"
+
+[node name="Label2" type="Label" parent="Tutorial/HBoxContainer" unique_id=160036467]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_wcjpl")
+theme_override_font_sizes/font_size = 18
+text = "TO DRAW"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Tutorial" unique_id=1228879468]
+layout_mode = 0
+offset_left = 59.0
+offset_top = -111.0
+offset_right = 273.0
+offset_bottom = -71.0
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="Tutorial/HBoxContainer2" unique_id=472333547]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_wcjpl")
+theme_override_font_sizes/font_size = 18
+text = "PRESS"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorial/HBoxContainer2" unique_id=127620835]
+texture_filter = 1
+position = Vector2(78, 19)
+sprite_frames = SubResource("SpriteFrames_uo0vl")
+autoplay = "default"
+
+[node name="Label2" type="Label" parent="Tutorial/HBoxContainer2" unique_id=1490204356]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_wcjpl")
+theme_override_font_sizes/font_size = 18
+text = "TO ERASE"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial" unique_id=443231154]
+libraries/ = SubResource("AnimationLibrary_0ourt")
+
+[node name="PencilPickUp" parent="." unique_id=41791010 node_paths=PackedStringArray("pencil", "tutorial", "animation_player") instance=ExtResource("9_at1ld")]
+position = Vector2(162, 234)
+pencil = NodePath("../Pencil")
+tutorial = NodePath("../Tutorial")
+animation_player = NodePath("../Tutorial/AnimationPlayer")
+
+[node name="Lava" parent="." unique_id=1276768460 instance=ExtResource("10_sd18g")]
+position = Vector2(40, 344)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava" unique_id=732939248]
+position = Vector2(280, 0)
+shape = SubResource("RectangleShape2D_oybhc")

@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var enabled = false
+@export var trick_enabled = false
 @export var gauge_magnitude : float = 0.1
 @export var pencil_gauge : float = 10.0
 @export var distance_between_points : float = 5.0
@@ -13,10 +15,14 @@ var stroke_dictionary : Dictionary[Path2D, float]
 var action_unpressed = false
 
 func _ready() -> void:
+	if enabled == false:
+		Input.mouse_mode = Input.MouseMode.MOUSE_MODE_CAPTURED
 	Input.set_use_accumulated_input(false)
 	pencil_gauge_bar.value = pencil_gauge
 
 func _process(_delta: float) -> void:
+	if enabled == false:
+		return
 	if Input.is_action_pressed("ui_accept"):
 		draw()
 	if Input.is_action_just_released("ui_accept"):
@@ -26,10 +32,11 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		if mouse_position == Vector2.ZERO:
-			mouse_position = event.position
-			return
-		mouse_position += event.relative
+		mouse_position = get_viewport().get_mouse_position()
+		#if mouse_position == Vector2.ZERO:
+			#mouse_position = event.position
+			#return
+		#mouse_position += event.relative
 
 
 func draw() -> void:
@@ -63,7 +70,8 @@ func add_point() -> void:
 		_stroke_fill.look_at(current_path.curve.get_point_position(current_path.curve.point_count - 2))
 		current_path.add_child(_stroke_fill)
 	
-	pencil_gauge = pencil_gauge - calculate_gauge_used()
+	if !trick_enabled:
+		pencil_gauge = pencil_gauge - calculate_gauge_used()
 
 func calculate_gauge_used() -> float:
 	var gauge_used : float
@@ -92,3 +100,18 @@ func erase():
 	stroke_dictionary.erase(current_path)
 	current_path.queue_free()
 	current_path = stroke_dictionary.keys().get(stroke_dictionary.keys().size() -1)
+
+func enable_trick():
+	$AnimationPlayer.play("trick_enabled")
+	trick_enabled = true
+
+func enable():
+	mouse_position = get_viewport().get_mouse_position()
+	Input.mouse_mode = Input.MouseMode.MOUSE_MODE_VISIBLE
+	visible = true
+	enabled = true
+
+func disable():
+	Input.mouse_mode = Input.MouseMode.MOUSE_MODE_CAPTURED
+	visible = false
+	enabled = false
